@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">소셜 미디어</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/javice-jbnu" 
+                href="https://github.com/niraaah/homepage" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-200"
