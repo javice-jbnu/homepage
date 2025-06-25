@@ -1,7 +1,7 @@
 {
   "name": "javice-homepage",
   "version": "1.0.0",
-  "homepage": "https://jbnu-javice.github.io",
+  "homepage": "https://JBNU-JAVICE.github.io",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.68",
