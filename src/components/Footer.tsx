@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
               <img 
-                src={`${process.env.PUBLIC_URL}/javice-logo-tp.png`} 
+                src={`${process.env.PUBLIC_URL}/javice-logo-tp.png`}
                 alt="JAVICE 로고" 
                 className="w-10 h-10 object-contain filter drop-shadow-lg"
               />
