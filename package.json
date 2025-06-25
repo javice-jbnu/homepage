@@ -1,7 +1,7 @@
 {
   "name": "homepage",
   "version": "1.0.0",
-  "homepage": "https://niraaah.github.io/homepage",
+  "homepage": "https://javice-jbnu.github.io/homepage",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.68",

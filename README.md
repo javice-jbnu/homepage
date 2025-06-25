@@ -5,7 +5,7 @@
 ## 전북대학교 웹개발 동아리 JAVICE
 ### *"Over the Full Stack"*
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success)](https://niraaah.github.io/homepage/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success)](https://javice-jbnu.github.io/homepage/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.6-blue)](https://tailwindcss.com/)
@@ -66,7 +66,7 @@ homepage/
 
 ### GitHub Pages
 현재 사이트는 GitHub Pages를 통해 배포됩니다:
-- **URL**: [https://niraaah.github.io/homepage/](https://niraaah.github.io/homepage/)
+- **URL**: [https://javice-jbnu.github.io/homepage/](https://javice-jbnu.github.io/homepage/)
 - **빌드**: GitHub Actions 자동 배포
 - **브랜치**: `main` 브랜치에서 자동 배포
 
