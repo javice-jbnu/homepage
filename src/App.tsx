@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 // 컴포넌트 import
@@ -15,7 +15,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/homepage">
+    <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
