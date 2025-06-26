@@ -1,107 +1,55 @@
-// 임시로 깃헙 페이지 배포를 위해 백엔드 연결을 끊었습니다
-// 실제 API 호출 대신 빈 데이터 또는 에러를 반환합니다
+// 백엔드 연결이 준비될 때까지 임시로 빈 데이터를 반환하는 API 서비스입니다.
 
-// import axios from 'axios';
 import { 
   Member, 
   ActivityPhoto, 
   ClubRoomPhoto, 
   Project, 
-  Notice, 
-  ApiResponse 
+  Notice
 } from '../types';
 
-// 임시 비활성화
-// const API_BASE_URL = process.env.NODE_ENV === 'production' 
-//   ? 'https://your-domain.com/api' 
-//   : '/api';
+// 임시 빈 데이터 반환 함수들
+const returnEmptyArray = async <T>(): Promise<T[]> => [];
+const returnNull = async <T>(): Promise<T | null> => null;
 
-// const api = axios.create({
-//   baseURL: API_BASE_URL,
-//   timeout: 10000,
-// });
-
-// 멤버 관련 API - 임시 비활성화
+// 멤버 관련 API
 export const memberApi = {
-  getAllMembers: async (): Promise<Member[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  getActiveMembers: async (): Promise<Member[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  getMemberById: async (id: string): Promise<Member | null> => {
-    // 백엔드 연결 해제로 null 반환
-    return null;
-  },
-  
-  getMembersByGeneration: async (generation: number): Promise<Member[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  }
+  getAllMembers: () => returnEmptyArray<Member>(),
+  getActiveMembers: () => returnEmptyArray<Member>(),
+  getMemberById: () => returnNull<Member>(),
+  getMembersByGeneration: () => returnEmptyArray<Member>()
 };
 
-// 활동 사진 관련 API - 임시 비활성화
+// 활동 사진 관련 API
 export const activityPhotoApi = {
-  getAllPhotos: async (): Promise<ActivityPhoto[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  getPhotosByCategory: async (category: string): Promise<ActivityPhoto[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  uploadPhoto: async (formData: FormData): Promise<ActivityPhoto> => {
-    // 백엔드 연결 해제로 에러 발생
+  getAllPhotos: () => returnEmptyArray<ActivityPhoto>(),
+  getPhotosByCategory: () => returnEmptyArray<ActivityPhoto>(),
+  uploadPhoto: async (): Promise<ActivityPhoto> => {
     throw new Error('현재 서비스 준비중입니다.');
   }
 };
 
-// 동아리방 사진 관련 API - 임시 비활성화
+// 동아리방 사진 관련 API
 export const clubRoomApi = {
-  getAllPhotos: async (): Promise<ClubRoomPhoto[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  uploadPhoto: async (formData: FormData): Promise<ClubRoomPhoto> => {
-    // 백엔드 연결 해제로 에러 발생
+  getAllPhotos: () => returnEmptyArray<ClubRoomPhoto>(),
+  uploadPhoto: async (): Promise<ClubRoomPhoto> => {
     throw new Error('현재 서비스 준비중입니다.');
   }
 };
 
-// 프로젝트 관련 API - 임시 비활성화
+// 프로젝트 관련 API
 export const projectApi = {
-  getAllProjects: async (): Promise<Project[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  getProjectById: async (id: string): Promise<Project | null> => {
-    // 백엔드 연결 해제로 null 반환
-    return null;
-  }
+  getAllProjects: () => returnEmptyArray<Project>(),
+  getProjectById: () => returnNull<Project>()
 };
 
-// 공지사항 관련 API - 임시 비활성화
+// 공지사항 관련 API
 export const noticeApi = {
-  getAllNotices: async (): Promise<Notice[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  },
-  
-  getPinnedNotices: async (): Promise<Notice[]> => {
-    // 백엔드 연결 해제로 빈 배열 반환
-    return [];
-  }
+  getAllNotices: () => returnEmptyArray<Notice>(),
+  getPinnedNotices: () => returnEmptyArray<Notice>()
 };
 
-// 편의 함수들 (하위 호환성을 위해)
+// 하위 호환성을 위한 편의 함수들
 export const getMembers = memberApi.getAllMembers;
 export const getActiveMembers = memberApi.getActiveMembers;
 export const getMembersByGeneration = memberApi.getMembersByGeneration;
