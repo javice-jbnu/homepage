@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <Link to="/" className="flex items-center">
               {/* JAVICE 공식 로고 */}
               <img 
-                src={`${process.env.PUBLIC_URL}/javice-logo-tp.png`} 
+                src={`${process.env.PUBLIC_URL}/homepage/javice-logo-tp.png`} 
                 alt="JAVICE 로고" 
                 className="w-10 h-10 object-contain filter drop-shadow-lg"
               />
