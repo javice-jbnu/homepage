@@ -65,4 +65,11 @@ export interface Notice {
   updatedAt: Date;
   isPinned: boolean;
   category: 'general' | 'event' | 'recruitment' | 'project';
+}
+
+// API 응답 타입
+export interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data?: T;
 } 

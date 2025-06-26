@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { noticeApi } from '../services/api';
+import { Notice } from '../types';
 
 const Home: React.FC = () => {
+  const [notices, setNotices] = useState<Notice[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchNotices = async () => {
+      try {
+        const pinnedNotices = await noticeApi.getPinnedNotices();
+        setNotices(pinnedNotices.slice(0, 3)); // 최대 3개만 표시
+      } catch (error) {
+        console.error('공지사항 로딩 실패:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNotices();
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* 히어로 섹션 */}
@@ -18,6 +38,8 @@ const Home: React.FC = () => {
                   className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto object-contain filter drop-shadow-2xl"
                 />
               </div>
+              
+              
             </div>
           </div>
         </div>
@@ -179,10 +201,10 @@ const Home: React.FC = () => {
           <p className="text-xl text-gray-300 mb-8">
             JAVICE와 함께 웹개발의 새로운 세계를 경험해보세요
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <div className="space-x-4">
             <Link
               to="/members"
-              className="w-full sm:w-auto bg-gradient-to-r from-white to-gray-200 text-black px-8 py-3 rounded-lg font-semibold hover:from-gray-200 hover:to-gray-300 transition-all duration-200 shadow-lg text-center"
+              className="inline-block bg-gradient-to-r from-white to-gray-200 text-black px-8 py-3 rounded-lg font-semibold hover:from-gray-200 hover:to-gray-300 transition-all duration-200 shadow-lg"
             >
               멤버 보기
             </Link>
@@ -190,10 +212,30 @@ const Home: React.FC = () => {
               href="https://instagram.com/javice_jbnu"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-200 text-center"
+              className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-200"
             >
               Instagram DM으로 지원하기
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 최신 공지사항 */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">최신 소식</h2>
+            <p className="text-gray-300">JAVICE의 최근 활동과 소식을 확인하세요</p>
+          </div>
+          
+          <div className="text-center py-20">
+            <div className="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-2">아직 준비중입니다</h3>
+            <p className="text-gray-300">공지사항 서비스를 준비 중입니다. 조금만 기다려주세요!</p>
           </div>
         </div>
       </section>
