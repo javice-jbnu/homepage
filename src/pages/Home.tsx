@@ -33,7 +33,7 @@ const Home: React.FC = () => {
               {/* 메인 로고 */}
               <div className="mb-8">
                 <img 
-                  src="/javice-logo-tp.png" 
+                  src="%PUBLIC_URL%/javice-logo-tp.png" 
                   alt="JAVICE 로고" 
                   className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto object-contain filter drop-shadow-2xl"
                 />
